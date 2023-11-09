@@ -1,0 +1,3 @@
+[submodule "fstests"]
+	path = fstests
+	url = https://github.com/btrfs/fstests
