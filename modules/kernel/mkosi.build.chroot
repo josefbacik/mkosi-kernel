@@ -11,7 +11,9 @@ fi
 ((INCREMENTAL)) && ! ((KERNEL)) && exit 0
 
 if [ -z "$CONFIG" ]; then
-    if [ -f kernel/mkosi.kernel.config ]; then
+    if [ -f "$SRCDIR/mkosi.kernel.$ARCHITECTURE.config" ]; then
+        CONFIG="mkosi.kernel.$ARCHITECTURE.config"
+    elif [ -f kernel/mkosi.kernel.config ]; then
         CONFIG=kernel/mkosi.kernel.config
     else
         CONFIG=mkosi.kernel.config
